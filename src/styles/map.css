@@ -1,0 +1,8 @@
+/* Map is always at least as big as the screen; pan by scrolling/dragging */
+.map-scroll { position: absolute; inset: 0; overflow: auto; background: #cfe0f3; scrollbar-width: none; container-type: size; }
+.map-scroll::-webkit-scrollbar { display: none; }
+.map-inner { position: relative; aspect-ratio: 1600 / 892; width: max(900px, 100cqw, calc(100cqh * 1.7937)); }
+.cart-marker { transform: translate(-50%, -50%); transition: left .4s linear, top .4s linear; }
+.pulse::after { content: ""; position: absolute; inset: -6px; border-radius: 9999px; border: 2px solid currentColor; animation: ping 1.8s ease-out infinite; }
+@keyframes ping { from { opacity: .7; transform: scale(.7); } to { opacity: 0; transform: scale(1.5); } }
+@media (prefers-reduced-motion: reduce) { .cart-marker { transition: none; } .pulse::after { animation: none; } }
